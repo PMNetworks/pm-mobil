@@ -1,0 +1,98 @@
+anruf:
+  fields:
+    anlass:
+      required: true
+      default: haustuer
+      selector:
+        select:
+          options: [haustuer, alarm, gefahr]
+    kennung:
+      selector:
+        text:
+    text:
+      selector:
+        text:
+    ziel:
+      selector:
+        text:
+          multiple: true
+    nur_unterwegs:
+      selector:
+        boolean:
+anruf_beenden:
+  fields:
+    kennung:
+      required: true
+      selector:
+        text:
+live_activity:
+  fields:
+    tag:
+      required: true
+      selector:
+        text:
+    titel:
+      selector:
+        text:
+    meldung:
+      selector:
+        text:
+    stufe:
+      selector:
+        text:
+    fortschritt:
+      selector:
+        number:
+          min: 0
+          max: 100000
+          mode: box
+    fortschritt_max:
+      selector:
+        number:
+          min: 1
+          max: 100000
+          mode: box
+    icon:
+      selector:
+        icon:
+    farbe:
+      selector:
+        text:
+    restzeit:
+      selector:
+        number:
+          min: 0
+          max: 86400
+          mode: box
+    ziel_ansicht:
+      selector:
+        text:
+    ton:
+      selector:
+        boolean:
+    nur_zuhause:
+      selector:
+        boolean:
+    art:
+      selector:
+        select:
+          options: [waesche, spueler, kohle, robo, timer, dusche, spa, sport]
+    relevanz:
+      selector:
+        number:
+          min: 0
+          max: 100
+    ziel:
+      selector:
+        text:
+          multiple: true
+live_activity_beenden:
+  fields:
+    tag:
+      required: true
+      selector:
+        text:
+    ziel:
+      selector:
+        text:
+          multiple: true

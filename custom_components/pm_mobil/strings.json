@@ -1,0 +1,153 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Apple Push (APNs)",
+        "description": "Optional: Schlüssel aus dem Apple Developer Program (Keys, mit „Apple Push Notifications service“) für Push bei geschlossener App. Ohne Schlüssel bleiben die Felder leer; dann zeigt die offene App die Live Activities der Automationen, Push kommt später dazu.",
+        "data": {
+          "team_id": "Team-ID",
+          "key_id": "Schlüssel-ID",
+          "schluessel": "Schlüssel (.p8, vollständiger Inhalt)",
+          "bundle_id": "Bundle-ID der App"
+        }
+      }
+    },
+    "error": {
+      "team_id": "Die Team-ID hat zehn Zeichen (A–Z, 0–9).",
+      "key_id": "Die Schlüssel-ID hat zehn Zeichen (A–Z, 0–9).",
+      "schluessel": "Mit diesem Schlüssel lässt sich nicht signieren. Bitte den vollständigen Inhalt der .p8-Datei einfügen."
+    },
+    "abort": {
+      "single_instance_allowed": "PM Mobil ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "PM Mobil",
+        "data": {
+          "nahe_zonen": "Zonen, die als zu Hause gelten (kein Haustür-Anruf)",
+          "kritisch_anruf": "Kritische Mitteilungen zusätzlich als Anruf"
+        }
+      }
+    }
+  },
+  "services": {
+    "anruf": {
+      "name": "Anruf",
+      "description": "Ruft die iPhones mit PM HomeControl an (VoIP-Push, CallKit).",
+      "fields": {
+        "anlass": {
+          "name": "Anlass",
+          "description": "haustuer, alarm oder gefahr."
+        },
+        "kennung": {
+          "name": "Kennung",
+          "description": "Kennung des Klingelns; ohne Angabe wird eine erzeugt."
+        },
+        "text": {
+          "name": "Text",
+          "description": "Zusatztext für die App."
+        },
+        "ziel": {
+          "name": "Ziel",
+          "description": "Geräte-ID, Kurzname oder Benutzer-ID; ohne Angabe alle."
+        },
+        "nur_unterwegs": {
+          "name": "Nur unterwegs",
+          "description": "Nur Geräte, deren Person nicht zu Hause ist (Vorgabe für die Haustür)."
+        }
+      }
+    },
+    "anruf_beenden": {
+      "name": "Anruf beenden",
+      "description": "Alle iPhones hören auf zu klingeln.",
+      "fields": {
+        "kennung": {
+          "name": "Kennung",
+          "description": "Kennung aus dem Anruf."
+        }
+      }
+    },
+    "live_activity": {
+      "name": "Live Activity",
+      "description": "Legt eine Live Activity an oder aktualisiert sie; Felder wie script.live_activity.",
+      "fields": {
+        "tag": {
+          "name": "Tag",
+          "description": "Kennung der Activity; gleicher Tag aktualisiert sie."
+        },
+        "titel": {
+          "name": "Titel",
+          "description": "Kopfzeile, etwa „🧺 Waschmaschine“."
+        },
+        "meldung": {
+          "name": "Meldung",
+          "description": "Haupttext."
+        },
+        "stufe": {
+          "name": "Stufe",
+          "description": "Kurzes Phasenlabel, etwa „Spülen“."
+        },
+        "fortschritt": {
+          "name": "Fortschritt",
+          "description": "Aktueller Wert des Balkens."
+        },
+        "fortschritt_max": {
+          "name": "Fortschritt maximal",
+          "description": "Endwert des Balkens (Vorgabe 100)."
+        },
+        "icon": {
+          "name": "Icon",
+          "description": "mdi-Symbol; die App wählt das passende eigene."
+        },
+        "farbe": {
+          "name": "Farbe",
+          "description": "Hex-Farbe für Symbol und Balken."
+        },
+        "restzeit": {
+          "name": "Restzeit in Sekunden",
+          "description": "Größer 0: Countdown läuft auf dem iPhone."
+        },
+        "ziel_ansicht": {
+          "name": "Ziel beim Antippen",
+          "description": "Wird in PM HomeControl übergangen."
+        },
+        "ton": {
+          "name": "Mit Ton",
+          "description": "An für die Abschlussmeldung."
+        },
+        "nur_zuhause": {
+          "name": "Nur wenn zu Hause",
+          "description": "Nur auf iPhones, deren Person zu Hause ist."
+        },
+        "art": {
+          "name": "Art",
+          "description": "Sonst aus dem Tag."
+        },
+        "relevanz": {
+          "name": "Relevanz",
+          "description": "0–100; die wichtigste belegt die Dynamic Island."
+        },
+        "ziel": {
+          "name": "Ziel",
+          "description": "Geräte; ohne Angabe alle."
+        }
+      }
+    },
+    "live_activity_beenden": {
+      "name": "Live Activity beenden",
+      "description": "Schließt die Live Activity mit diesem Tag.",
+      "fields": {
+        "tag": {
+          "name": "Tag",
+          "description": "Wie beim Anlegen."
+        },
+        "ziel": {
+          "name": "Ziel",
+          "description": "Geräte; ohne Angabe alle."
+        }
+      }
+    }
+  }
+}
